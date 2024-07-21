@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Mai Soong</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>MS</h1>
+    <div class="input-group">
+        <label for="rate-type">Rate Type</label>
+        <select id="rate-type" onchange="changeForm()">
+            <option value="">Select</option>
+            <option value="in">In</option>
+            <option value="out">Out</option>
+        </select>
+    </div>
+    <div id="form-content">
+        <!-- Form fields will be dynamically inserted here -->
+    </div>
+    <button onclick="addEntry()">Generate</button>
+
+    <div class="output" id="output"></div>
+    <button id="toggle-results-button" onclick="toggleResults()">Show All</button>
+
+    <div id="all-results" style="display: none;">
+        <h2>All Results</h2>
+        <div class="all-entries" id="all-entries"></div>
+    </div>
+
+    <div class="export-group">
+        <label for="export-type-in">Export In</label>
+        <select id="export-type-in">
+            <option value="csv">CSV</option>
+            <option value="pdf">PDF</option>
+        </select>
+        <button onclick="exportData('in')">Export</button>
+    </div>
+
+    <div class="export-group">
+        <label for="export-type-out">Export Out</label>
+        <select id="export-type-out">
+            <option value="csv">CSV</option>
+            <option value="pdf">PDF</option>
+        </select>
+        <button onclick="exportData('out')">Export</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
